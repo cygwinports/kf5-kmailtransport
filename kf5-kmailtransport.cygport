@@ -1,0 +1,43 @@
+inherit kf5
+
+NAME="kf5-kmailtransport"
+VERSION=17.12.3
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 Mail Transport library"
+DESCRIPTION="The mailtransport module provides shared mail transport settings,
+GUI elements to configure mail transport settings, and job classes for mail
+sending."
+
+PKG_NAMES="libKF5MailTransport5 libKF5MailTransport-devel
+	   libKF5MailTransportAkonadi5 libKF5MailTransportAkonadi-devel"
+libKF5MailTransport5_CONTENTS="
+	etc/xdg/kmailtransport.*
+	usr/bin/cygKF5MailTransport-5.dll
+	usr/lib/qt5/plugins/kcm_mailtransport.dll
+	usr/lib/qt5/plugins/mailtransport/mailtransport_smtpplugin.dll
+	usr/share/config.kcfg/mailtransport.kcfg
+	usr/share/doc/${NAME}
+	usr/share/kservices5/kcm_mailtransport.desktop
+	usr/share/locale/*/LC_MESSAGES/libmailtransport5.mo
+"
+libKF5MailTransportAkonadi5_CONTENTS="
+	usr/bin/cygKF5MailTransportAkonadi-5.dll
+	usr/lib/qt5/plugins/mailtransport/mailtransport_akonadiplugin.dll
+"
+libKF5MailTransport_devel_REQUIRES="libKF5Config-devel libKF5CoreAddons-devel libKF5I18n-devel libQt5Gui-devel"
+libKF5MailTransport_devel_CONTENTS="
+	usr/include/KF5/[Mm]ail[Tt]ransport/
+	usr/include/KF5/mailtransport_version.h
+	usr/lib/cmake/KF5MailTransport/
+	usr/lib/libKF5MailTransport.dll.a
+	usr/lib/qt5/mkspecs/modules/qt_KMailTransport.pri
+"
+libKF5MailTransportAkonadi_devel_REQUIRES="libKF5Akonadi-devel libKF5AkonadiMime-devel libKF5CoreAddons-devel libKF5MailTransport-devel libKF5Mime-devel libQt5Core-devel"
+libKF5MailTransportAkonadi_devel_CONTENTS="
+	usr/include/KF5/[Mm]ail[Tt]ransport[Aa]konadi/
+	usr/include/KF5/mailtransportakonadi_version.h
+	usr/lib/cmake/KF5MailTransportAkonadi/
+	usr/lib/libKF5MailTransportAkonadi.dll.a
+	usr/lib/qt5/mkspecs/modules/qt_KMailTransportAkonadi.pri
+"
